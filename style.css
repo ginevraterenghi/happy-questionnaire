@@ -1,0 +1,1063 @@
+/* ==================================================
+   GLOBAL
+   ================================================== */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: #4D997F;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* ==================================================
+   MAIN PAGE STRUCTURE — DESKTOP
+   ================================================== */
+
+.content-structure {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 16px;
+  gap: 16px;
+
+  overflow: hidden;
+}
+
+
+/* ==================================================
+   HEADER
+   ================================================== */
+
+.content-top {
+  width: 100%;
+  height: auto;
+
+  flex: 0 0 auto;
+
+  /* border: 1px solid black; */
+
+  padding: 12px 16px;
+
+  font-family: "Fraunces", serif;
+  color: white;
+}
+
+
+/* -----------------------------------------------
+   HEADER TEXT
+   ----------------------------------------------- */
+
+.header-text {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: center;
+}
+
+
+/* -----------------------------------------------
+   TITLE + PINK KEY
+   ----------------------------------------------- */
+
+.header-title {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 12px;
+}
+
+.content-top h1 {
+  margin: 0 0 6px 0;
+  padding: 0;
+
+  font-family: "Fraunces", serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 0.9;
+
+  color: white;
+}
+
+
+/* -----------------------------------------------
+   PINK KEY
+   ----------------------------------------------- */
+
+.header-key {
+  display: block;
+
+  width: auto;
+  height: 48px;
+
+  flex: 0 0 auto;
+
+  object-fit: contain;
+}
+
+.content-top h2 {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Fraunces", serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+
+  color: white;
+
+  overflow-wrap: break-word;
+}
+
+
+/* ==================================================
+   CENTRAL GRID — DESKTOP
+   ================================================== */
+
+.content-grid {
+  width: 100%;
+
+  flex: 1 1 auto;
+  min-height: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  /*
+    First row height is controlled by Box 1.
+    Second row fills remaining space.
+  */
+
+  grid-template-rows:
+    auto minmax(0, 1fr);
+
+  gap: 16px;
+}
+
+
+/* ==================================================
+   ALL CONTENT BOXES
+   ================================================== */
+
+.content-box {
+  width: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  /* border: 1px solid black; */
+
+  overflow: hidden;
+}
+
+
+/* ==================================================
+   BOX 1 — TOP LEFT
+   ================================================== */
+
+.content-box-text {
+  display: block;
+
+  padding: 16px;
+
+  overflow: hidden;
+}
+
+.content-box-text p {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Urbanist", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+
+  color: white;
+
+  text-align: left;
+
+  overflow-wrap: break-word;
+}
+
+
+/* ==================================================
+   BOX 2 — TOP RIGHT
+   ================================================== */
+
+.content-box-image {
+  position: relative;
+
+  min-width: 0;
+  min-height: 0;
+
+  padding: 0;
+
+  overflow: hidden;
+}
+
+.home-illustration {
+  position: absolute;
+
+  /*
+  top: 16px;
+  right: 16px;
+  bottom: 16px;
+  */
+
+  left: 16px;
+
+  width: calc(100%);
+  height: calc(100%);
+
+  display: block;
+
+  object-fit: contain;
+  object-position: left;
+}
+
+
+/* ==================================================
+   BOX 3 — BOTTOM LEFT
+   ================================================== */
+
+.content-box-participate {
+  width: 100%;
+  height: auto;
+
+  padding: 16px;
+
+  background-image:
+    url("./assets/illustrazioni/button_orange_square.png");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+
+  overflow: visible;
+}
+
+.content-box-participate h2 {
+  margin: 0 0 16px 0;
+  padding: 0;
+
+  font-family: "Fraunces", serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+
+  color: white;
+}
+
+.content-box-participate p {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Urbanist", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+
+  color: white;
+}
+
+
+/* ==================================================
+   BOX 4 — BOTTOM RIGHT
+   ================================================== */
+
+.content-box-how {
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  overflow: hidden;
+}
+
+
+/* -----------------------------------------------
+   COME PARTECIPARE
+   ----------------------------------------------- */
+
+.content-box-how h2:first-of-type {
+  margin: 0 0 16px 0;
+  padding: 0;
+
+  font-family: "Fraunces", serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+
+  color: white;
+
+  text-align: left;
+}
+
+
+/* -----------------------------------------------
+   INTRO PARAGRAPH
+   ----------------------------------------------- */
+
+.content-box-how h2:first-of-type + p {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Urbanist", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+
+  color: white;
+
+  text-align: left;
+
+  overflow-wrap: break-word;
+}
+
+
+/* ==================================================
+   PINK BUTTON
+   ================================================== */
+
+.button-pink {
+  width: 260px;
+  height: 75px;
+
+  margin-top: 10px;
+
+  align-self: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image:
+    url("./assets/illustrazioni/button_pink_round.png");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  font-family: "Fraunces", serif;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 1;
+
+  color: white;
+
+  white-space: nowrap;
+
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transform: scale(1);
+  transform-origin: center;
+
+  transition: transform 0.2s ease;
+}
+
+.button-pink:hover {
+  transform: scale(1.05);
+}
+
+.button-pink:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}
+
+
+/* ==================================================
+   CONTACTS INSIDE BOX 4
+   ================================================== */
+
+/* -----------------------------------------------
+   CONTATTI
+   ----------------------------------------------- */
+
+.content-box-how h2:nth-of-type(2) {
+  margin: 8px 0 16px 0;
+  padding: 0;
+
+  font-family: "Fraunces", serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+
+  color: white;
+
+  text-align: left;
+}
+
+
+/* -----------------------------------------------
+   CONTACT PARAGRAPH
+   ----------------------------------------------- */
+
+.content-box-how h2:nth-of-type(2) + p {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Urbanist", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+
+  color: white;
+
+  text-align: left;
+
+  overflow-wrap: break-word;
+}
+
+
+/* -----------------------------------------------
+   EMAIL
+   ----------------------------------------------- */
+
+.content-box-how a[href^="mailto:"] {
+  color: white;
+
+  font-family: "Urbanist", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition: opacity 0.2s ease;
+}
+
+.content-box-how a[href^="mailto:"]:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+.content-box-how a[href^="mailto:"]:focus-visible {
+  outline: 1px solid white;
+  outline-offset: 3px;
+}
+
+
+/* ==================================================
+   FOOTER — DESKTOP
+   ================================================== */
+
+.content-bottom {
+  width: 100%;
+  height: 80px;
+
+  flex: 0 0 80px;
+
+  /* border: 1px solid black; */
+
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 12px 16px;
+
+  overflow: hidden;
+}
+
+
+/* ==================================================
+   FOOTER LOGOS — DESKTOP
+   ================================================== */
+
+.content-bottom img {
+  display: block;
+
+  width: auto;
+  height: 100%;
+
+  max-width: 15%;
+  max-height: 100%;
+
+  object-fit: contain;
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 768px) {
+
+
+  /* -----------------------------------------------
+     PAGE
+     ----------------------------------------------- */
+
+  html,
+  body {
+    width: 100%;
+    height: auto;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .content-structure {
+    width: 100%;
+
+    height: auto;
+    min-height: 100vh;
+
+    padding: 16px;
+
+    /* no space between header, grid and footer */
+    gap: 0;
+
+    overflow: visible;
+  }
+
+
+  /* -----------------------------------------------
+     HEADER — MOBILE
+     ----------------------------------------------- */
+
+  .content-top {
+    width: 100%;
+    height: auto;
+
+    flex: 0 0 auto;
+
+    /* border: 1px solid black; */
+
+    padding: 12px 16px;
+
+    font-family: "Fraunces", serif;
+    color: white;
+  }
+
+  .header-text {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+
+  /* -----------------------------------------------
+     TITLE + PINK KEY — MOBILE
+     ----------------------------------------------- */
+
+  .header-title {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 10px;
+  }
+
+  .content-top h1 {
+    margin: 0 0 6px 0;
+    padding: 0;
+
+    font-family: "Fraunces", serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 0.9;
+
+    color: white;
+  }
+
+  .header-key {
+    display: block;
+
+    width: auto;
+    height: 42px;
+
+    flex: 0 0 auto;
+
+    object-fit: contain;
+  }
+
+  .content-top h2 {
+    margin: 0;
+    padding: 0;
+
+    font-family: "Fraunces", serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+
+    color: white;
+
+    overflow-wrap: break-word;
+  }
+
+
+  /* -----------------------------------------------
+     GRID
+     ----------------------------------------------- */
+
+  .content-grid {
+    width: 100%;
+
+    flex: none;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    /* no space between boxes */
+    gap: 0;
+  }
+
+
+  /* -----------------------------------------------
+     ALL BOXES
+     ----------------------------------------------- */
+
+  .content-box {
+    width: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    /* border: 1px solid black; */
+  }
+
+
+  /* -----------------------------------------------
+     BOX 1
+     ----------------------------------------------- */
+
+  .content-box-text {
+    width: 100%;
+    height: auto;
+
+    padding: 16px;
+
+    overflow: visible;
+  }
+
+  .content-box-text p {
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 1.25;
+
+    color: white;
+  }
+
+
+  /* -----------------------------------------------
+     BOX 2
+     ----------------------------------------------- */
+
+  .content-box-image {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    padding: 0;
+
+    overflow: hidden;
+  }
+
+  .home-illustration {
+    position: absolute;
+
+    width: 70%;
+    height: 70%;
+
+    top: 50%;
+    left: 50%;
+
+    right: auto;
+    bottom: auto;
+
+    transform: translate(-50%, -50%);
+
+    object-fit: contain;
+    object-position: center;
+  }
+
+
+  /* -----------------------------------------------
+     BOX 3
+     ----------------------------------------------- */
+
+  .content-box-participate {
+    width: 100%;
+    height: auto;
+
+    padding: 16px;
+
+    background-image:
+      url("./assets/illustrazioni/button_orange_square.png");
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+
+    overflow: visible;
+  }
+
+  .content-box-participate h2 {
+    margin: 0 0 16px 0;
+
+    font-size: 28px;
+    line-height: 1;
+
+    color: white;
+  }
+
+  .content-box-participate p {
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 1.25;
+
+    color: white;
+  }
+
+
+  /* -----------------------------------------------
+     BOX 4
+     ----------------------------------------------- */
+
+  .content-box-how {
+    width: 100%;
+    height: auto;
+
+    padding: 16px;
+
+    overflow: visible;
+  }
+
+  .content-box-how h2:first-of-type {
+    margin: 0 0 16px 0;
+
+    font-size: 28px;
+    line-height: 1;
+
+    color: white;
+  }
+
+  .content-box-how h2:first-of-type + p {
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 1.25;
+
+    color: white;
+  }
+
+
+  /* -----------------------------------------------
+     PINK BUTTON — MOBILE
+     ----------------------------------------------- */
+
+  .button-pink {
+    width: 260px;
+    height: 75px;
+
+    margin-top: 10px;
+
+    align-self: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-size: contain;
+
+    font-size: 20px;
+    font-weight: 200;
+
+    white-space: nowrap;
+  }
+
+  .button-pink:hover {
+    transform: scale(1.05);
+  }
+
+
+  /* -----------------------------------------------
+     CONTACTS — MOBILE
+     ----------------------------------------------- */
+
+  .content-box-how h2:nth-of-type(2) {
+    margin: 32px 0 16px 0;
+
+    font-size: 28px;
+    line-height: 1;
+
+    color: white;
+  }
+
+  .content-box-how h2:nth-of-type(2) + p {
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 1.25;
+
+    color: white;
+  }
+
+  .content-box-how a[href^="mailto:"] {
+    font-size: 16px;
+    line-height: 1.25;
+
+    color: white;
+  }
+
+
+  /* -----------------------------------------------
+     FOOTER — MOBILE
+     ----------------------------------------------- */
+
+  .content-bottom {
+    width: 100%;
+    height: auto;
+
+    flex: none;
+
+    display: grid;
+
+    /* 2 logos per row */
+    grid-template-columns: repeat(2, 1fr);
+
+    column-gap: 24px;
+    row-gap: 8px;
+
+    align-items: center;
+    justify-items: left;
+
+    padding: 24px 16px;
+
+    overflow: visible;
+  }
+
+
+  /* -----------------------------------------------
+     FOOTER LOGOS — MOBILE
+     ----------------------------------------------- */
+
+  .content-bottom img {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 100px;
+    max-height: 45px;
+
+    object-fit: contain;
+
+    margin: 0;
+  }
+
+}
+
+
+/* ==================================================
+   LARGE DESKTOP
+   ================================================== */
+
+@media (min-width: 1600px) {
+
+
+  /* -----------------------------------------------
+     PAGE
+     ----------------------------------------------- */
+
+  .content-structure {
+    max-width: 1500px;
+    height: 90vh;
+
+    margin: 5vh auto;
+
+    padding: 20px;
+    gap: 20px;
+  }
+
+
+  /* -----------------------------------------------
+     HEADER
+     ----------------------------------------------- */
+
+  .content-top {
+    padding: 16px 20px;
+  }
+
+  .header-title {
+    gap: 16px;
+  }
+
+  .content-top h1 {
+    font-size: 60px;
+  }
+
+  .header-key {
+    height: 60px;
+  }
+
+  .content-top h2 {
+    font-size: 34px;
+  }
+
+
+  /* -----------------------------------------------
+     CENTRAL GRID
+     ----------------------------------------------- */
+
+  .content-grid {
+    gap: 20px;
+  }
+
+
+  /* -----------------------------------------------
+     BOX 1
+     ----------------------------------------------- */
+
+  .content-box-text {
+    padding: 20px;
+  }
+
+  .content-box-text p {
+    font-size: 19px;
+    line-height: 1.25;
+  }
+
+
+  /* -----------------------------------------------
+     BOX 2
+     ----------------------------------------------- */
+
+  .home-illustration {
+    left: 20px;
+  }
+
+
+  /* -----------------------------------------------
+     BOX 3
+     ----------------------------------------------- */
+
+  .content-box-participate {
+    padding: 20px;
+  }
+
+  .content-box-participate h2 {
+    margin-bottom: 20px;
+
+    font-size: 34px;
+  }
+
+  .content-box-participate p {
+    font-size: 19px;
+    line-height: 1.25;
+  }
+
+
+  /* -----------------------------------------------
+     BOX 4
+     ----------------------------------------------- */
+
+  .content-box-how {
+    padding: 20px;
+  }
+
+  .content-box-how h2:first-of-type {
+    margin-bottom: 20px;
+
+    font-size: 34px;
+  }
+
+  .content-box-how h2:first-of-type + p {
+    font-size: 19px;
+    line-height: 1.25;
+  }
+
+
+  /* -----------------------------------------------
+     PINK BUTTON
+     ----------------------------------------------- */
+
+  .button-pink {
+    width: 310px;
+    height: 90px;
+
+    margin-top: 14px;
+
+    font-size: 24px;
+  }
+
+
+  /* -----------------------------------------------
+     CONTACTS
+     ----------------------------------------------- */
+
+  .content-box-how h2:nth-of-type(2) {
+    margin: 12px 0 20px 0;
+
+    font-size: 34px;
+  }
+
+  .content-box-how h2:nth-of-type(2) + p {
+    font-size: 19px;
+    line-height: 1.25;
+  }
+
+  .content-box-how a[href^="mailto:"] {
+    font-size: 19px;
+    line-height: 1.25;
+  }
+
+
+  /* -----------------------------------------------
+     FOOTER
+     ----------------------------------------------- */
+
+  .content-bottom {
+    height: 100px;
+
+    flex: 0 0 100px;
+
+    gap: 24px;
+
+    padding: 16px 20px;
+  }
+
+}
