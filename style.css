@@ -1,4 +1,23 @@
 /* ==================================================
+   HAPPY QUESTIONNAIRE
+   PAGE-SPECIFIC STYLES
+
+   General visual system:
+   happy-ds.css
+
+   DESKTOP
+   - Entire page fits inside 100vh
+   - No vertical scrolling
+   - Header at the top
+   - Footer at the bottom
+   - Main content fills available space
+
+   TABLET / MOBILE
+   - Normal vertical scrolling
+   ================================================== */
+
+
+/* ==================================================
    GLOBAL
    ================================================== */
 
@@ -8,10 +27,14 @@ body {
   padding: 0;
 
   width: 100%;
-  height: 100%;
-
-  background-color: #4D997F;
+  min-height: 100%;
 }
+
+
+body {
+  min-height: 100vh;
+}
+
 
 * {
   box-sizing: border-box;
@@ -19,22 +42,32 @@ body {
 
 
 /* ==================================================
-   MAIN PAGE STRUCTURE — DESKTOP
+   MAIN TEXT
+   ================================================== */
+
+.content-box p,
+.header-subtitle,
+.contacts p,
+.participation-action p {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 200;
+}
+
+
+/* ==================================================
+   MAIN PAGE STRUCTURE
    ================================================== */
 
 .content-structure {
-  width: 94vw;
-  height: 94vh;
-
-  margin: 3vh auto;
+  width: 100%;
+  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
 
-  padding: 16px;
-  gap: 16px;
+  padding: 32px;
 
-  overflow: hidden;
+  gap: 32px;
 }
 
 
@@ -44,444 +77,301 @@ body {
 
 .content-top {
   width: 100%;
-  height: auto;
+
+  display: flex;
+  align-items: flex-start;
 
   flex: 0 0 auto;
-
-  /* border: 1px solid black; */
-
-  padding: 12px 16px;
-
-  font-family: "Fraunces", serif;
-  color: white;
 }
 
 
-/* -----------------------------------------------
-   HEADER TEXT
-   ----------------------------------------------- */
-
 .header-text {
-  min-width: 0;
-
   display: flex;
   flex-direction: column;
 
   align-items: flex-start;
-  justify-content: center;
+
+  gap: 4px;
 }
 
-
-/* -----------------------------------------------
-   TITLE + PINK KEY
-   ----------------------------------------------- */
 
 .header-title {
   display: flex;
   flex-direction: row;
 
   align-items: center;
-  justify-content: flex-start;
-
-  gap: 12px;
-}
-
-.content-top h1 {
-  margin: 0 0 6px 0;
-  padding: 0;
-
-  font-family: "Fraunces", serif;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 0.9;
-
-  color: white;
-}
-
-
-/* -----------------------------------------------
-   PINK KEY
-   ----------------------------------------------- */
-
-.header-key {
-  display: block;
-
-  width: auto;
-  height: 48px;
-
-  flex: 0 0 auto;
-
-  object-fit: contain;
-}
-
-.content-top h2 {
-  margin: 0;
-  padding: 0;
-
-  font-family: "Fraunces", serif;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 1;
-
-  color: white;
-
-  overflow-wrap: break-word;
-}
-
-
-/* ==================================================
-   CENTRAL GRID — DESKTOP
-   ================================================== */
-
-.content-grid {
-  width: 100%;
-
-  flex: 1 1 auto;
-  min-height: 0;
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  /*
-    Both rows follow their content.
-    The orange box therefore stops after
-    its text + its bottom padding.
-  */
-
-  grid-template-rows:
-    auto auto;
-
-  align-content: start;
 
   gap: 16px;
 }
 
 
+.header-title h1 {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* HAPPY key / note */
+
+.header-key {
+  display: block;
+
+  width: auto;
+  height: 3em;
+
+  object-fit: contain;
+}
+
+
+.header-subtitle {
+  margin: 0;
+  padding: 0;
+
+  font-weight: 200;
+}
+
+
 /* ==================================================
-   ALL CONTENT BOXES
+   MAIN CONTENT GRID
+   ================================================== */
+
+.content-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 32px;
+
+  align-items: stretch;
+}
+
+
+/* ==================================================
+   GENERIC CONTENT BOX
    ================================================== */
 
 .content-box {
-  width: 100%;
-
   min-width: 0;
-  min-height: 0;
-
-  /* border: 1px solid black; */
-
-  overflow: hidden;
-}
-
-
-/* ==================================================
-   BOX 1 — TOP LEFT
-   ================================================== */
-
-.content-box-text {
-  display: block;
-
-  padding: 16px;
-
-  overflow: hidden;
-}
-
-.content-box-text p {
-  margin: 0;
-  padding: 0;
-
-  font-family: "Urbanist", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.25;
-
-  color: white;
-
-  text-align: left;
-
-  overflow-wrap: break-word;
-}
-
-
-/* ==================================================
-   BOX 2 — TOP RIGHT
-   ================================================== */
-
-.content-box-image {
-  position: relative;
-
-  min-width: 0;
-  min-height: 0;
-
-  padding: 0;
-
-  overflow: hidden;
-}
-
-.home-illustration {
-  position: absolute;
-
-  /*
-  top: 16px;
-  right: 16px;
-  bottom: 16px;
-  */
-
-  left: 16px;
-
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: contain;
-  object-position: left;
-}
-
-
-/* ==================================================
-   BOX 3 — BOTTOM LEFT
-   ================================================== */
-
-.content-box-participate {
-  width: 100%;
-  height: fit-content;
-
-  align-self: start;
-
-  padding: 16px;
-
-  background-image:
-    url("./assets/illustrazioni/button_orange_square.png");
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
-
-  overflow: visible;
-}
-
-.content-box-participate h2 {
-  margin: 0 0 16px 0;
-  padding: 0;
-
-  font-family: "Fraunces", serif;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 1;
-
-  color: white;
-}
-
-.content-box-participate p {
-  margin: 0;
-  padding: 0;
-
-  font-family: "Urbanist", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.25;
-
-  color: white;
-}
-
-
-/* ==================================================
-   BOX 4 — BOTTOM RIGHT
-   ================================================== */
-
-.content-box-how {
-  padding: 16px;
 
   display: flex;
   flex-direction: column;
 
   align-items: flex-start;
+}
+
+
+.content-box h2 {
+  margin-top: 0;
+}
+
+
+.content-box p {
+  font-weight: 200;
+}
+
+
+.content-box p:first-child {
+  margin-top: 0;
+}
+
+
+.content-box p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ==================================================
+   TOP LEFT
+   PROJECT DESCRIPTION
+   ================================================== */
+
+.content-box-text {
   justify-content: flex-start;
+}
+
+
+/* ==================================================
+   TOP RIGHT
+   HAPPY ILLUSTRATION
+   ================================================== */
+
+.content-box-image {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
 
   overflow: hidden;
 }
 
 
-/* -----------------------------------------------
-   COME PARTECIPARE
-   ----------------------------------------------- */
+.home-illustration {
+  display: block;
 
-.content-box-how h2:first-of-type {
-  margin: 0 0 16px 0;
-  padding: 0;
+  width: 100%;
+  height: 100%;
 
-  font-family: "Fraunces", serif;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 1;
+  max-height: 420px;
 
-  color: white;
-
-  text-align: left;
-}
-
-
-/* -----------------------------------------------
-   INTRO PARAGRAPH
-   ----------------------------------------------- */
-
-.content-box-how h2:first-of-type + p {
-  margin: 0;
-  padding: 0;
-
-  font-family: "Urbanist", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.25;
-
-  color: white;
-
-  text-align: left;
-
-  overflow-wrap: break-word;
+  object-fit: contain;
+  object-position: center;
 }
 
 
 /* ==================================================
-   PINK BUTTON
+   BOTTOM LEFT
+   PARTICIPATION DESCRIPTION
    ================================================== */
 
-.button-pink {
-  width: 260px;
-  height: 75px;
+.content-box-participate {
+  justify-content: flex-start;
+}
 
-  margin-top: 10px;
 
-  align-self: center;
+/* ==================================================
+   BOTTOM RIGHT
+   PARTICIPATION + CONTACTS
+   ================================================== */
+
+.content-box-how {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  gap: 48px;
+}
+
+
+.participation-action {
+  width: 100%;
 
   display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+.participation-action h2 {
+  margin-top: 0;
+}
+
+
+.participation-action p {
+  font-weight: 200;
+}
+
+
+/* ==================================================
+   PARTICIPATION BUTTON
+   button_pink_round.png
+   ================================================== */
+
+.participation-action .bottone {
+  margin-top: 24px;
+
+  width: 220px;
+  height: 70px;
+
+  display: flex;
+
   align-items: center;
   justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  outline: none;
+
+  background-color: transparent;
 
   background-image:
     url("./assets/illustrazioni/button_pink_round.png");
 
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: 100% 100%;
 
-  font-family: "Fraunces", serif;
-  font-size: 20px;
+  color: inherit;
   font-weight: 200;
-  line-height: 1;
 
-  color: white;
-
-  white-space: nowrap;
-
-  text-align: center;
   text-decoration: none;
-
-  cursor: pointer;
-
-  transform: scale(1);
-  transform-origin: center;
-
-  transition: transform 0.2s ease;
 }
 
-.button-pink:hover {
-  transform: scale(1.05);
-}
 
-.button-pink:focus-visible {
-  outline: 2px solid white;
-  outline-offset: 4px;
+/* underline text only on interaction */
+
+.participation-action .bottone:hover,
+.participation-action .bottone:focus-visible {
+  border: none;
+  outline: none;
+
+  text-decoration: underline;
+
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
 }
 
 
 /* ==================================================
-   CONTACTS INSIDE BOX 4
+   CONTACTS
    ================================================== */
 
-/* -----------------------------------------------
-   CONTATTI
-   ----------------------------------------------- */
+.contacts {
+  width: 100%;
 
-.content-box-how h2:nth-of-type(2) {
-  margin: 8px 0 16px 0;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
 
-  font-family: "Fraunces", serif;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 1;
-
-  color: white;
-
-  text-align: left;
+  align-items: flex-start;
 }
 
 
-/* -----------------------------------------------
-   CONTACT PARAGRAPH
-   ----------------------------------------------- */
-
-.content-box-how h2:nth-of-type(2) + p {
-  margin: 0;
-  padding: 0;
-
-  font-family: "Urbanist", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.25;
-
-  color: white;
-
-  text-align: left;
-
-  overflow-wrap: break-word;
+.contacts h2 {
+  margin-top: 0;
 }
 
 
-/* -----------------------------------------------
-   EMAIL
-   ----------------------------------------------- */
+.contacts p {
+  font-weight: 200;
+}
 
-.content-box-how a[href^="mailto:"] {
-  color: white;
 
-  font-family: "Urbanist", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.25;
+/* email — no underline by default */
+
+.contacts a {
+  color: inherit;
+
+  font-weight: inherit;
 
   text-decoration: none;
-
-  cursor: pointer;
-
-  transition: opacity 0.2s ease;
 }
 
-.content-box-how a[href^="mailto:"]:hover {
-  opacity: 0.7;
+
+/* underline only on interaction */
+
+.contacts a:hover,
+.contacts a:focus-visible {
   text-decoration: underline;
-}
 
-.content-box-how a[href^="mailto:"]:focus-visible {
-  outline: 1px solid white;
-  outline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
 }
 
 
 /* ==================================================
-   FOOTER — DESKTOP
+   FOOTER
    ================================================== */
 
 .content-bottom {
   width: 100%;
-  height: 80px;
 
-  flex: 0 0 80px;
-
-  /* border: 1px solid black; */
+  margin-top: auto;
 
   display: flex;
   flex-direction: row;
@@ -489,420 +379,184 @@ body {
   align-items: center;
   justify-content: space-between;
 
-  gap: 20px;
+  flex-wrap: nowrap;
 
-  padding: 12px 16px;
+  gap: 32px;
 
-  margin-top: auto;
-
-  overflow: hidden;
+  flex: 0 0 auto;
 }
 
-
-/* ==================================================
-   FOOTER LOGOS — DESKTOP
-   ================================================== */
 
 .content-bottom img {
   display: block;
 
   width: auto;
-  height: 100%;
+  height: auto;
 
-  max-width: 15%;
-  max-height: 100%;
+  max-width: 150px;
+  max-height: 48px;
 
   object-fit: contain;
+
+  flex-shrink: 1;
 }
 
 
 /* ==================================================
-   MOBILE
+   DESKTOP
+   SINGLE-SCREEN LAYOUT
    ================================================== */
 
-@media (max-width: 768px) {
-
-
-  /* -----------------------------------------------
-     PAGE
-     ----------------------------------------------- */
+@media (min-width: 64.01rem) {
 
   html,
   body {
     width: 100%;
-    height: auto;
-
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-
-  .content-structure {
-    width: 100%;
-
-    height: auto;
-    min-height: 100vh;
-
-    margin: 0;
-
-    padding: 16px;
-
-    /* no space between header, grid and footer */
-    gap: 0;
-
-    overflow: visible;
-  }
-
-
-  /* -----------------------------------------------
-     HEADER — MOBILE
-     ----------------------------------------------- */
-
-  .content-top {
-    width: 100%;
-    height: auto;
-
-    flex: 0 0 auto;
-
-    /* border: 1px solid black; */
-
-    padding: 12px 16px;
-
-    font-family: "Fraunces", serif;
-    color: white;
-  }
-
-  .header-text {
-    min-width: 0;
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: flex-start;
-    justify-content: center;
-  }
-
-
-  /* -----------------------------------------------
-     TITLE + PINK KEY — MOBILE
-     ----------------------------------------------- */
-
-  .header-title {
-    display: flex;
-    flex-direction: row;
-
-    align-items: center;
-    justify-content: flex-start;
-
-    gap: 10px;
-  }
-
-  .content-top h1 {
-    margin: 0 0 6px 0;
-    padding: 0;
-
-    font-family: "Fraunces", serif;
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 0.9;
-
-    color: white;
-  }
-
-  .header-key {
-    display: block;
-
-    width: auto;
-    height: 42px;
-
-    flex: 0 0 auto;
-
-    object-fit: contain;
-  }
-
-  .content-top h2 {
-    margin: 0;
-    padding: 0;
-
-    font-family: "Fraunces", serif;
-    font-size: 28px;
-    font-weight: 400;
-    line-height: 1;
-
-    color: white;
-
-    overflow-wrap: break-word;
-  }
-
-
-  /* -----------------------------------------------
-     GRID
-     ----------------------------------------------- */
-
-  .content-grid {
-    width: 100%;
-
-    flex: none;
-
-    display: grid;
-
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-
-    align-content: normal;
-
-    /* no space between boxes */
-    gap: 0;
-  }
-
-
-  /* -----------------------------------------------
-     ALL BOXES
-     ----------------------------------------------- */
-
-  .content-box {
-    width: 100%;
-
-    min-width: 0;
-    min-height: 0;
-
-    /* border: 1px solid black; */
-  }
-
-
-  /* -----------------------------------------------
-     BOX 1
-     ----------------------------------------------- */
-
-  .content-box-text {
-    width: 100%;
-    height: auto;
-
-    padding: 16px;
-
-    overflow: visible;
-  }
-
-  .content-box-text p {
-    margin: 0;
-
-    font-size: 16px;
-    line-height: 1.25;
-
-    color: white;
-  }
-
-
-  /* -----------------------------------------------
-     BOX 2
-     ----------------------------------------------- */
-
-  .content-box-image {
-    position: relative;
-
-    width: 100%;
-
-    aspect-ratio: 1 / 1;
-
-    padding: 0;
+    height: 100%;
 
     overflow: hidden;
   }
 
+
+  /* ---------- PAGE ---------- */
+
+  .content-structure {
+    width: 100%;
+    height: 100vh;
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 24px 32px;
+
+    gap: 24px;
+
+    overflow: hidden;
+  }
+
+
+  /* ---------- HEADER ---------- */
+
+  .content-top {
+    flex: 0 0 auto;
+  }
+
+
+  /* ---------- MAIN AREA ---------- */
+
+  .content-grid {
+    flex: 1 1 auto;
+
+    min-height: 0;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+
+    grid-template-rows:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+
+    column-gap: 32px;
+    row-gap: 24px;
+
+    overflow: hidden;
+  }
+
+
+  /* ---------- CONTENT BOXES ---------- */
+
+  .content-box {
+    min-height: 0;
+
+    overflow: hidden;
+  }
+
+
+  /* ---------- ILLUSTRATION ---------- */
+
+  .content-box-image {
+    min-height: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+  }
+
+
   .home-illustration {
-    position: absolute;
+    display: block;
 
-    width: 70%;
-    height: 70%;
+    width: 100%;
+    height: 100%;
 
-    top: 50%;
-    left: 50%;
-
-    right: auto;
-    bottom: auto;
-
-    transform: translate(-50%, -50%);
+    max-height: 100%;
 
     object-fit: contain;
     object-position: center;
   }
 
 
-  /* -----------------------------------------------
-     BOX 3
-     ----------------------------------------------- */
-
-  .content-box-participate {
-    width: 100%;
-    height: auto;
-
-    align-self: auto;
-
-    padding: 16px;
-
-    background-image:
-      url("./assets/illustrazioni/button_orange_square.png");
-
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
-
-    overflow: visible;
-  }
-
-  .content-box-participate h2 {
-    margin: 0 0 16px 0;
-
-    font-size: 28px;
-    line-height: 1;
-
-    color: white;
-  }
-
-  .content-box-participate p {
-    margin: 0;
-
-    font-size: 16px;
-    line-height: 1.25;
-
-    color: white;
-  }
-
-
-  /* -----------------------------------------------
-     BOX 4
-     ----------------------------------------------- */
+  /* ---------- PARTICIPATION ---------- */
 
   .content-box-how {
-    width: 100%;
-    height: auto;
+    min-height: 0;
 
-    padding: 16px;
+    justify-content: space-between;
 
-    overflow: visible;
-  }
-
-  .content-box-how h2:first-of-type {
-    margin: 0 0 16px 0;
-
-    font-size: 28px;
-    line-height: 1;
-
-    color: white;
-  }
-
-  .content-box-how h2:first-of-type + p {
-    margin: 0;
-
-    font-size: 16px;
-    line-height: 1.25;
-
-    color: white;
+    gap: 20px;
   }
 
 
-  /* -----------------------------------------------
-     PINK BUTTON — MOBILE
-     ----------------------------------------------- */
-
-  .button-pink {
-    width: 260px;
-    height: 75px;
-
-    margin-top: 10px;
-
-    align-self: center;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background-size: contain;
-
-    font-size: 20px;
-    font-weight: 200;
-
-    white-space: nowrap;
-  }
-
-  .button-pink:hover {
-    transform: scale(1.05);
+  .participation-action .bottone {
+    margin-top: 16px;
   }
 
 
-  /* -----------------------------------------------
-     CONTACTS — MOBILE
-     ----------------------------------------------- */
+  /* ---------- CONTACTS ---------- */
 
-  .content-box-how h2:nth-of-type(2) {
-    margin: 32px 0 16px 0;
-
-    font-size: 28px;
-    line-height: 1;
-
-    color: white;
-  }
-
-  .content-box-how h2:nth-of-type(2) + p {
-    margin: 0;
-
-    font-size: 16px;
-    line-height: 1.25;
-
-    color: white;
-  }
-
-  .content-box-how a[href^="mailto:"] {
-    font-size: 16px;
-    line-height: 1.25;
-
-    color: white;
+  .contacts {
+    transform: translateY(-24px);
   }
 
 
-  /* -----------------------------------------------
-     FOOTER — MOBILE
-     ----------------------------------------------- */
+  /* ---------- FOOTER ---------- */
 
   .content-bottom {
     width: 100%;
-    height: auto;
 
-    flex: none;
-
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    column-gap: 24px;
-    row-gap: 8px;
-
-    align-items: center;
-    justify-items: left;
+    flex: 0 0 auto;
 
     margin-top: 0;
 
-    padding: 24px 16px;
+    display: flex;
+    flex-direction: row;
 
-    overflow: visible;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: nowrap;
+
+    gap: 32px;
   }
 
 
-  /* -----------------------------------------------
-     FOOTER LOGOS — MOBILE
-     ----------------------------------------------- */
-
   .content-bottom img {
-    display: block;
-
     width: auto;
     height: auto;
 
-    max-width: 100px;
-    max-height: 45px;
+    max-width: 150px;
+    max-height: 48px;
 
     object-fit: contain;
 
-    margin: 0;
+    flex-shrink: 1;
   }
 
 }
@@ -912,179 +566,223 @@ body {
    LARGE DESKTOP
    ================================================== */
 
-@media (min-width: 1600px) {
+@media (min-width: 90rem) {
+
+  .content-structure {
+    width: min(100%, 1440px);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: 64px;
+    padding-right: 64px;
+  }
 
 
-  /* -----------------------------------------------
-     PAGE
-     ----------------------------------------------- */
+  .content-grid {
+    column-gap: 64px;
+  }
+
+}
+
+
+/* ==================================================
+   TABLET / SMALL DESKTOP
+   NORMAL VERTICAL SCROLL
+   ================================================== */
+
+@media (max-width: 64rem) {
+
+  html,
+  body {
+    height: auto;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
 
   .content-structure {
     width: 100%;
-    max-width: 1500px;
+    height: auto;
+    min-height: 100vh;
 
-    height: 90vh;
+    padding: 24px;
 
-    margin: 5vh auto;
+    gap: 32px;
 
-    padding: 20px;
-    gap: 20px;
+    overflow: visible;
   }
 
 
-  /* -----------------------------------------------
-     HEADER
-     ----------------------------------------------- */
-
-  .content-top {
-    padding: 16px 20px;
-  }
-
-  .header-title {
-    gap: 16px;
-  }
-
-  .content-top h1 {
-    font-size: 60px;
-  }
-
-  .header-key {
-    height: 60px;
-  }
-
-  .content-top h2 {
-    font-size: 34px;
-  }
-
-
-  /* -----------------------------------------------
-     CENTRAL GRID
-     ----------------------------------------------- */
+  /* ---------- CONTENT ---------- */
 
   .content-grid {
-    grid-template-rows:
-      auto auto;
+    display: grid;
 
-    align-content: start;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
 
-    gap: 20px;
+    gap: 40px;
+
+    overflow: visible;
   }
 
 
-  /* -----------------------------------------------
-     BOX 1
-     ----------------------------------------------- */
-
-  .content-box-text {
-    padding: 20px;
-  }
-
-  .content-box-text p {
-    font-size: 19px;
-    line-height: 1.25;
+  .content-box {
+    overflow: visible;
   }
 
 
-  /* -----------------------------------------------
-     BOX 2
-     ----------------------------------------------- */
+  /* ---------- IMAGE ---------- */
+
+  .content-box-image {
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    overflow: visible;
+  }
+
 
   .home-illustration {
-    left: 20px;
+    width: 100%;
+    height: auto;
+
+    max-height: 380px;
+
+    object-fit: contain;
+    object-position: left center;
   }
 
 
-  /* -----------------------------------------------
-     BOX 3
-     ----------------------------------------------- */
-
-  .content-box-participate {
-    height: fit-content;
-
-    padding: 20px;
-  }
-
-  .content-box-participate h2 {
-    margin-bottom: 20px;
-
-    font-size: 34px;
-  }
-
-  .content-box-participate p {
-    font-size: 19px;
-    line-height: 1.25;
-  }
-
-
-  /* -----------------------------------------------
-     BOX 4
-     ----------------------------------------------- */
+  /* ---------- PARTICIPATION ---------- */
 
   .content-box-how {
-    padding: 20px;
-  }
-
-  .content-box-how h2:first-of-type {
-    margin-bottom: 20px;
-
-    font-size: 34px;
-  }
-
-  .content-box-how h2:first-of-type + p {
-    font-size: 19px;
-    line-height: 1.25;
+    gap: 40px;
   }
 
 
-  /* -----------------------------------------------
-     PINK BUTTON
-     ----------------------------------------------- */
+  /* ---------- CONTACTS ---------- */
 
-  .button-pink {
-    width: 310px;
-    height: 90px;
-
-    margin-top: 14px;
-
-    font-size: 24px;
+  .contacts {
+    transform: none;
   }
 
 
-  /* -----------------------------------------------
-     CONTACTS
-     ----------------------------------------------- */
-
-  .content-box-how h2:nth-of-type(2) {
-    margin: 12px 0 20px 0;
-
-    font-size: 34px;
-  }
-
-  .content-box-how h2:nth-of-type(2) + p {
-    font-size: 19px;
-    line-height: 1.25;
-  }
-
-  .content-box-how a[href^="mailto:"] {
-    font-size: 19px;
-    line-height: 1.25;
-  }
-
-
-  /* -----------------------------------------------
-     FOOTER
-     ----------------------------------------------- */
+  /* ---------- FOOTER ---------- */
 
   .content-bottom {
-    height: 100px;
+    margin-top: 16px;
 
-    flex: 0 0 100px;
+    justify-content: flex-start;
 
-    gap: 24px;
+    flex-wrap: wrap;
 
-    padding: 16px 20px;
+    gap: 24px 32px;
+  }
 
-    margin-top: auto;
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 40rem) {
+
+  .content-structure {
+    padding: 16px;
+
+    gap: 28px;
+  }
+
+
+  /* ---------- HEADER ---------- */
+
+  .header-title {
+    gap: 10px;
+  }
+
+
+  .header-key {
+    height: 0.9em;
+  }
+
+
+  /* ---------- CONTENT ---------- */
+
+  .content-grid {
+    gap: 32px;
+  }
+
+
+  .home-illustration {
+    max-height: 300px;
+  }
+
+
+  .content-box-how {
+    gap: 32px;
+  }
+
+
+  /* ---------- BUTTON ---------- */
+
+  .participation-action .bottone {
+    margin-top: 20px;
+
+    width: 200px;
+    height: 64px;
+  }
+
+
+  /* ---------- FOOTER ---------- */
+
+  .content-bottom {
+    margin-top: 12px;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    flex-wrap: wrap;
+
+    gap: 20px 24px;
+  }
+
+
+  .content-bottom img {
+    max-width: 110px;
+    max-height: 38px;
+  }
+
+}
+
+
+/* ==================================================
+   VERY SMALL MOBILE
+   ================================================== */
+
+@media (max-width: 24rem) {
+
+  .content-structure {
+    padding: 12px;
+  }
+
+
+  .participation-action .bottone {
+    width: 180px;
+    height: 58px;
+  }
+
+
+  .content-bottom {
+    gap: 18px;
+  }
+
+
+  .content-bottom img {
+    max-width: 95px;
+    max-height: 34px;
   }
 
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
 
@@ -10,32 +10,21 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>HAPPY</title>
+  <title>HAPPY – Questionario per insegnanti di musica</title>
 
 
   <!-- ==================================================
-       GOOGLE FONTS
+       HAPPY DESIGN SYSTEM
        ================================================== -->
 
   <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Urbanist:wght@400;500;600;700&display=swap"
     rel="stylesheet"
+    href="happy-ds.css"
   >
 
 
   <!-- ==================================================
-       CSS
+       PAGE-SPECIFIC LAYOUT
        ================================================== -->
 
   <link
@@ -46,7 +35,7 @@
 </head>
 
 
-<body>
+<body class="fondo-verde-salvia su-colore">
 
 
   <!-- ==================================================
@@ -66,7 +55,9 @@
 
         <div class="header-title">
 
-          <h1>HAPPY</h1>
+          <h1>
+            HAPPY
+          </h1>
 
           <img
             src="./assets/illustrazioni/key_black.png"
@@ -76,9 +67,10 @@
 
         </div>
 
-        <h2>
+
+        <p class="text-titolo-2 header-subtitle">
           HeAlthy Playing Practices for Young musicians
-        </h2>
+        </p>
 
       </div>
 
@@ -87,14 +79,13 @@
 
 
     <!-- ==================================================
-         CENTRAL 2 × 2 GRID
+         MAIN CONTENT
          ================================================== -->
 
     <section class="content-grid">
 
 
       <!-- ==================================================
-           BOX 1 — TOP LEFT
            PROJECT DESCRIPTION
            ================================================== -->
 
@@ -115,7 +106,6 @@
 
 
       <!-- ==================================================
-           BOX 2 — TOP RIGHT
            ILLUSTRATION
            ================================================== -->
 
@@ -123,7 +113,7 @@
 
         <img
           src="./assets/illustrazioni/logo_home_solo.png"
-          alt="HAPPY illustration"
+          alt=""
           class="home-illustration"
         >
 
@@ -132,79 +122,91 @@
 
 
       <!-- ==================================================
-           BOX 3 — BOTTOM LEFT
            PARTICIPATION DESCRIPTION
            ================================================== -->
 
-      <div class="content-box content-box-participate">
+      <section class="content-box content-box-participate">
 
         <h2>
           Vuoi partecipare?
         </h2>
 
         <p>
-          Hai un ruolo unico nella vita dei tuoi allievi, e insegnare musica significa anche prenderti cura di chi suona. HAPPY raccoglie in un Toolkit gli strumenti pratici per farlo ogni giorno, come guide illustrate, esercizi e materiali pratici per parlarne con famiglie e professionisti della salute. Non serve nessuna competenza clinica, e sei tu ad aiutarci a costruire queste risorse, raccontandoci cosa serve davvero in classe.
+          Hai un ruolo unico nella vita dei tuoi allievi, e
+          insegnare musica significa anche prenderti cura di chi
+          suona. HAPPY raccoglie in un Toolkit gli strumenti
+          pratici per farlo ogni giorno, come guide illustrate,
+          esercizi e materiali pratici per parlarne con famiglie
+          e professionisti della salute. Non serve nessuna
+          competenza clinica, e sei tu ad aiutarci a costruire
+          queste risorse, raccontandoci cosa serve davvero in
+          classe.
         </p>
 
-      </div>
+      </section>
 
 
 
       <!-- ==================================================
-           BOX 4 — BOTTOM RIGHT
-           HOW TO PARTICIPATE
+           HOW TO PARTICIPATE + CONTACTS
            ================================================== -->
 
-      <div class="content-box content-box-how">
-
-        <h2>
-          Come partecipare
-        </h2>
-
-        <p>
-          Parti dal sondaggio, pochi minuti per dirci cosa
-          osservi e cosa vivi in classe.
-        </p>
+      <section class="content-box content-box-how">
 
 
-        <!-- PINK BUTTON -->
+        <!-- HOW TO PARTICIPATE -->
 
-        <a
-          href="https://qualtrics.com"
-          class="button-pink"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Partecipa
-        </a>
+        <div class="participation-action">
+
+          <h2>
+            Come partecipare
+          </h2>
+
+          <p>
+            Parti dal sondaggio, pochi minuti per dirci cosa
+            osservi e cosa vivi in classe.
+          </p>
 
 
-        <h2>
-          Contatti
-        </h2>
-
-        <p>
-
-          <a href="mailto:cinzia.cruder@supsi.ch">
-            cinzia.cruder@supsi.ch
+          <a
+            href="https://qualtrics.com"
+            class="bottone bottone--contorno"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            partecipa
           </a>
 
-        </p>
+        </div>
 
-      </div>
+
+
+        <!-- CONTACTS -->
+
+        <div class="contacts">
+
+          <h2>
+            Contatti
+          </h2>
+
+          <p>
+            <a href="mailto:cinzia.cruder@supsi.ch">
+              cinzia.cruder@supsi.ch
+            </a>
+          </p>
+
+        </div>
+
+
+      </section>
 
 
     </section>
-    <!-- END CENTRAL GRID -->
 
 
 
     <!-- ==================================================
          FOOTER
-
-         IMPORTANT:
-         Footer is OUTSIDE .content-grid.
-         Therefore it always occupies the complete width.
          ================================================== -->
 
     <footer class="content-bottom">
@@ -218,31 +220,31 @@
 
       <img
         src="./assets/loghi/logo_conservatorio_white.png"
-        alt="Partner"
+        alt="Conservatorio della Svizzera italiana"
       >
 
 
       <img
         src="./assets/loghi/logo_lac_white.png"
-        alt="Partner"
+        alt="LAC Lugano Arte e Cultura"
       >
 
 
       <img
         src="./assets/loghi/logo_evs_white.png"
-        alt="Partner"
+        alt="Ente partner del progetto HAPPY"
       >
 
 
       <img
         src="./assets/loghi/logo_med_white.png"
-        alt="Partner"
+        alt="Ente partner del progetto HAPPY"
       >
 
 
       <img
         src="./assets/loghi/logo_med_white.png"
-        alt="Partner"
+        alt="Ente partner del progetto HAPPY"
       >
 
 
